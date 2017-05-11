@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" ng-app="RoutingMap">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular Leaflet</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/leaflet/dist/leaflet.js"></script>
+    <script src="../bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+    <script src="../bower_components/leaflet-polylinedecorator/leaflet.polylineDecorator.js"></script>
+    <script src="../bower_components/ui-leaflet/dist/ui-leaflet.min.js"></script>
+    <link rel="stylesheet" href="../bower_components/leaflet/dist/leaflet.css">
+    <script src="index.js"></script>
+</head>
+<body ng-controller="RoutingCtrl">
+  <leaflet id="first" lf-center="london" defaults="defaults" event-broadcast="events" markers="markers" width="100%" height="480px"></leaflet>
+  <form>
+      <h3>{{selectedMarker.message}}</h3>
+      <div>
+          <label for="lat">Marker Latitude</label>
+          <input type="number" step="0.001" id="lat" name="lat" ng-model="selectedMarker.lat">
+      </div>
+      <div>
+          <label for="lng">Marker Longitude</label>
+          <input type="number" step="0.001" id="lng" name="lng" ng-model="selectedMarker.lng">
+      </div>
+  </form>
+</body>
+</html>
